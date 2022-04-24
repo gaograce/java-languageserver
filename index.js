@@ -29,18 +29,6 @@ const params =
         `${BASE_URI}/${CONFIG_DIR}`
     ]
 
-function prepareExecutable() {
-    let executable = Object.create(null)
-    let options = Object.create(null)
-    options.env = process.env
-    options.stdio = 'pipe'
-    executable.options = options
-    executable.command = 'java'
-    executable.args = params
-    return executable
-}
-
-let executable = prepareExecutable()
 let app = express()
 let server = app.listen(PORT)
 let ws = new WebSocket.Server({
@@ -85,7 +73,7 @@ server.on('upgrade', function (request, socket, head) {
 })
 
 function launch(socket) {
-    let process = cp.spawn(executable.command, executable.args)
+    let process = cp.spawn('java', params)
     let data = ''
     let left = 0, start = 0, last = 0
     process.stdin.setEncoding('utf-8')
