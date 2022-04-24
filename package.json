@@ -1,0 +1,27 @@
+{
+  "name": "java-languageserver",
+  "version": "1.0.0",
+  "description": "eclipse.jdt.ls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "languageserver",
+    "java"
+  ],
+  "author": "Grace",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "glob": "^8.0.1",
+    "ws": "^8.5.0"
+  },
+  "browser": {
+    "child_process": true
+  }
+}
