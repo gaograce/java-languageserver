@@ -40,7 +40,6 @@ function prepareExecutable() {
     return executable
 }
 
-exports.prepareExecutable = prepareExecutable
 let executable = prepareExecutable()
 let app = express()
 let server = app.listen(PORT)
